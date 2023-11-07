@@ -1,7 +1,6 @@
 package ru.netology.melovskikh.services;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ru.netology.melovskikh.domain.Client;
 import ru.netology.melovskikh.domain.Operation;
@@ -12,51 +11,46 @@ import java.util.Scanner;
 @Data
 @NoArgsConstructor
 public class IOService {
-    private static StorageService<Client> clients = StorageService.customerStorageService;
-    private static StorageService<Operation> operations = StorageService.operationStorageService;
-    private static int[][] statement = StorageService.getStatement();
-    private static int[] clientOperationsCount = StorageService.getClientOperationsCount();
-    private Scanner scanner = new Scanner(System.in);
-    @Getter
-    private static String name;
-    @Getter
-    private static int sum;
-    @Getter
-    private static String currency;
-    @Getter
-    private static String merchant;
-    @Getter
-    private static int clientId;
-    private String answer;
+    private static Scanner scanner = new Scanner(System.in);
 
-    public void input() {
+    public static Client inputClient(int countOfClients) {
         System.out.println("Client name: ");
-        name = scanner.nextLine();
+        String name = scanner.nextLine();
 
+        return new Client(countOfClients, name);
+    }
+
+    public static Operation inputOperation(int operationId) {
         System.out.println("Sum: ");
-        sum =scanner.nextInt();
+        int sum = scanner.nextInt();
         scanner.nextLine();
 
         System.out.println("Currency: ");
-        currency = scanner.nextLine();
+        String currency = scanner.nextLine();
 
         System.out.println("Merchant: ");
-        merchant = scanner.nextLine();
+        String merchant = scanner.nextLine();
 
+        return new Operation(sum, currency, merchant, operationId);
+    }
+
+    public static int inputClientID() {
         System.out.println("Client: ");
-        clientId = scanner.nextInt();
+        int clientId = scanner.nextInt();
         scanner.nextLine();
+
+        return clientId;
     }
 
-    public void print() {
-        System.out.println(clients.toString());
-        System.out.println(operations.toString());
-        System.out.println(Arrays.deepToString(statement));
-        System.out.println(Arrays.toString(clientOperationsCount));
+    public static void print() {
+        System.out.println(StorageService.customerStorageService.toString());
+        System.out.println(StorageService.operationStorageService.toString());
+        System.out.println(Arrays.deepToString(StorageService.getStatement()));
+        System.out.println(Arrays.toString(StorageService.getClientOperationsCount()));
     }
 
-    public void setAnswer() {
+    public static String setAnswer() {
         System.out.println("Do you want to enter next operation? Y/N");
-        answer = scanner.nextLine().toUpperCase();
+        return scanner.nextLine().toUpperCase();
     }
 }
