@@ -4,22 +4,27 @@ import lombok.Data;
 import ru.netology.melovskikh.domain.Operation;
 import ru.netology.melovskikh.exeptions.CustomerOperationOutOfBoundException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Data
 public class StatementService {
-    private static final int[][] statement = StorageService.getStatement();
-    private static final int[] clientOperationsCount = StorageService.getClientOperationsCount();
+    private final Map<Integer, List<Operation>> storage = new HashMap<>();
 
-    public static void saveStatement(int operationId, int clientId) throws CustomerOperationOutOfBoundException {
-        if (clientId > StorageService.MAX_CLIENTS || operationId > StorageService.MAX_OPERATIONS) {
-            throw new CustomerOperationOutOfBoundException(clientId, operationId);
+    public void saveOperation(Operation operation) {
+        List<Operation> operations = storage.get(operation.getId());
+        if (operations == null) {
+            List<Operation> customerOperations = new ArrayList<>();
+            customerOperations.add(operation);
+            storage.put(operation.getId(), customerOperations);
+        } else {
+            operations.add(operation);
         }
+    }
 
-        int operationsCountForClient = clientOperationsCount[clientId];
-        statement[clientId][operationsCountForClient] = operationId;
-        clientOperationsCount[clientId]++;
+    public String getOperation() {
+        return storage.toString();
     }
 }

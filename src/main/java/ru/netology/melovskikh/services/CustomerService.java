@@ -3,25 +3,15 @@ package ru.netology.melovskikh.services;
 import lombok.Data;
 import ru.netology.melovskikh.domain.Client;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
-public class CustomerService implements Operatable {
-    private static StorageService<Client> clients = StorageService.customerStorageService;
+public class CustomerService {
+    private final List<Client> storage = new ArrayList<>();
 
-    @Override
-    public void add() {
-        int countOfClients = 0;
-        while (true) {
-            Client client = IOService.inputClient(countOfClients);
-            clients.setElement(client);
-            countOfClients++;
-
-            if (IOService.setAnswer().equals("N") || countOfClients == StorageService.MAX_CLIENTS) {
-                break;
-            }
-        }
+    public void addCustomer(int id, String name) {
+        Client client = new Client(id, name);
+        storage.add(client);
     }
-
-//    public void delete(int countOfClients) {
-//        clients.remove(countOfClients);
-//    }
 }
