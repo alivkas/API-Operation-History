@@ -1,12 +1,12 @@
 package ru.netology.melovskikh.services;
 
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import ru.netology.melovskikh.domain.Client;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@RequiredArgsConstructor
 public class CustomerService {
     private final List<Client> storage = new ArrayList<>();
 

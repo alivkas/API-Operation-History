@@ -1,5 +1,13 @@
 ru\netology\melovskikh\domain\Client.class
+ru\netology\melovskikh\exeptions\OperationRuntimeException.class
+ru\netology\melovskikh\domain\ConsolePrintable.class
 ru\netology\melovskikh\domain\LoanOperation.class
+ru\netology\melovskikh\services\AsyncInputOperationService$1.class
+ru\netology\melovskikh\services\AsyncInputOperationService.class
+ru\netology\melovskikh\services\StatementService.class
+ru\netology\melovskikh\services\CustomerService.class
+ru\netology\melovskikh\exeptions\CustomerOperationOutOfBoundException.class
+ru\netology\melovskikh\exeptions\OperationException.class
 ru\netology\melovskikh\domain\CashbackOperation.class
 ru\netology\melovskikh\Main.class
 ru\netology\melovskikh\domain\Operation.class

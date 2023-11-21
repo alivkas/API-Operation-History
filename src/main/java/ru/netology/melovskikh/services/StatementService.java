@@ -1,15 +1,14 @@
 package ru.netology.melovskikh.services;
 
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import ru.netology.melovskikh.domain.Operation;
-import ru.netology.melovskikh.exeptions.CustomerOperationOutOfBoundException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Data
+@RequiredArgsConstructor
 public class StatementService {
     private final Map<Integer, List<Operation>> storage = new HashMap<>();
 
