@@ -1,7 +1,12 @@
 package ru.netology.melovskikh.services;
 
 import lombok.Data;
+import ru.netology.melovskikh.domain.Operation;
 import ru.netology.melovskikh.exeptions.CustomerOperationOutOfBoundException;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Data
 public class StatementService {

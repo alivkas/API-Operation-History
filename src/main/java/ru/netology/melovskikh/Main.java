@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         customerService.add();
         operationService.add();
+        asyncInputOperationService.startAsyncOperationProcessing();
 
         IOService.print();
     }

@@ -6,7 +6,9 @@ import ru.netology.melovskikh.domain.Client;
 import ru.netology.melovskikh.domain.Operation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class StorageService<T> {
