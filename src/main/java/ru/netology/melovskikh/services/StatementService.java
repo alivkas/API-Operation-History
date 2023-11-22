@@ -1,6 +1,7 @@
 package ru.netology.melovskikh.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import ru.netology.melovskikh.domain.Operation;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 @RequiredArgsConstructor
 public class StatementService {
     private final Map<Integer, List<Operation>> storage = new HashMap<>();

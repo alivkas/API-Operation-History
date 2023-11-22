@@ -1,15 +1,21 @@
 package ru.netology.melovskikh.services;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import ru.netology.melovskikh.configuration.OperationsProcessingProperties;
 import ru.netology.melovskikh.domain.Operation;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+@Component
 @RequiredArgsConstructor
 public class AsyncInputOperationService {
     private final Queue<Operation> operations = new LinkedList<>();
+
     private final StatementService statementService;
+    private final OperationsProcessingProperties properties;
 
     public boolean addOperation(Operation operation){
         System.out.println("Operation added for processing" + operation);
@@ -32,7 +38,7 @@ public class AsyncInputOperationService {
             if (operation == null) {
                 try {
                     System.out.println("No operation");
-                    Thread.sleep(1_000);
+                    Thread.sleep(properties.getTimeout());
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -45,5 +51,10 @@ public class AsyncInputOperationService {
 
     private void processOperation(Operation operation) {
         statementService.saveOperation(operation);
+    }
+
+    @PostConstruct
+    public void init() {
+        this.startAsyncOperationProcessing();
     }
 }
