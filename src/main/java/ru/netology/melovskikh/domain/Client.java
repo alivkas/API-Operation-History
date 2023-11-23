@@ -3,7 +3,7 @@ package ru.netology.melovskikh.domain;
 import lombok.Data;
 
 @Data
-public class Client {
+public class Client implements ConsolePrintable {
     private int id;
     private String name;
 
@@ -13,10 +13,7 @@ public class Client {
     }
 
     @Override
-    public String toString() {
-        return "Client{" +
-                "id: " + id +
-                ", name: " + name +
-                "}";
+    public void printToConsole() {
+        System.out.println(id + name);
     }
 }
