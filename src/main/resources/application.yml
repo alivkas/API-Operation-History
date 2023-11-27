@@ -1,2 +1,2 @@
 operations.processing:
-  timeout: 1000
+  timeout: 100
