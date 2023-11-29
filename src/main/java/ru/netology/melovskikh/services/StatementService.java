@@ -1,5 +1,6 @@
 package ru.netology.melovskikh.services;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.netology.melovskikh.domain.Operation;
@@ -25,7 +26,15 @@ public class StatementService {
         }
     }
 
-    public String getOperation() {
-        return storage.toString();
+    public Map<Integer, List<Operation>> getOperation() {
+        return storage;
+    }
+
+    @PostConstruct
+    public void init() {
+        List<Operation> operations1 = new ArrayList<>();
+        operations1.add(new Operation(1000, "RUB", "Coffe", 1));
+        operations1.add(new Operation(300, "RUB", "Coffe", 2));
+        storage.put(1, operations1);
     }
 }

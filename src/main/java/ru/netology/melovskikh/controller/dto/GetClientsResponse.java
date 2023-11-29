@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class GetClientsResponse {
-    private final List<ClientDTO> client;
+    private final List<ClientDTO> clients;
 }
