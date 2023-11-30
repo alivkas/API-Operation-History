@@ -10,7 +10,6 @@ public class Operation {
     private int sum;
     private String currency;
     private String merchant;
-   // private int customerId;
 
     public Operation(int sum, String currency, String merchant, int id) {
         this.sum = sum;
