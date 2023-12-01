@@ -24,4 +24,10 @@ public class CustomerServiceTest extends OperationHistoryApiApplicationTest {
         assertEquals("Boot", client2.getName());
         assertEquals(2, clients.size());
     }
+
+    @Test
+    public void addCustomersTest() {
+        customerService.addCustomer(3, "Fedya");
+        assertEquals(new Client(3, "Fedya"), customerService.getCustomers().get(2));
+    }
 }
