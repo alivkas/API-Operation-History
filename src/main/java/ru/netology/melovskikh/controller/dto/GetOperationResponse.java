@@ -8,5 +8,5 @@ import java.util.Map;
 
 @Data
 public class GetOperationResponse {
-    private final Map<Integer, List<OperationDTO>> operation;
+    private final List<OperationDTO> operations;
 }

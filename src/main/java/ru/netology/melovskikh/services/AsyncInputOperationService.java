@@ -44,7 +44,6 @@ public class AsyncInputOperationService {
                 }
             } else {
                 System.out.println("Processing operation:" + operation);
-                processOperation(operation);
             }
         }
     }
