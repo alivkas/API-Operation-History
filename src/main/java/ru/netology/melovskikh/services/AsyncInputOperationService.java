@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.netology.melovskikh.configuration.OperationsProcessingProperties;
+import ru.netology.melovskikh.domain.Client;
 import ru.netology.melovskikh.domain.Operation;
 
 import java.util.LinkedList;
@@ -48,8 +49,8 @@ public class AsyncInputOperationService {
         }
     }
 
-    private void processOperation(Operation operation) {
-        statementService.saveOperation(operation);
+    private void processOperation(Operation operation, Client client) {
+        statementService.saveOperation(operation, client);
     }
 
     @PostConstruct

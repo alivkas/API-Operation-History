@@ -42,7 +42,8 @@ public class OperationsController {
                 statementService.saveOperation(new Operation(operation.getSum(),
                         operation.getCurrency(),
                         operation.getMerchant(),
-                        operation.getId()));
+                        operation.getId()),
+                        client);
                 operationService.addOperation(new Operation(operation.getSum(),
                         operation.getCurrency(),
                         operation.getMerchant(),

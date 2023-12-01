@@ -2,6 +2,7 @@ C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melov
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\domain\CashbackOperation.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\domain\LoanOperation.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\exeptions\OperationRuntimeException.java
+C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\controller\dto\GetOperationResponse.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\services\CustomerService.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\domain\Client.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\OperationHistoryApiApplication.java
@@ -12,6 +13,7 @@ C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melov
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\controller\dto\ClientDTO.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\exeptions\CustomerOperationOutOfBoundException.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\services\StatementService.java
+C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\controller\dto\OperationDTO.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\controller\OperationsController.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\services\AsyncInputOperationService.java
 C:\Users\alivka\IdeaProjects\APIOperationHistory\src\main\java\ru\netology\melovskikh\controller\CustomerController.java

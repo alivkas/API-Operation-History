@@ -15,18 +15,15 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class StatementService {
     private final Map<Integer, List<Operation>> storage = new HashMap<>();
-    private final CustomerService customerService;
 
-    public void saveOperation(Operation operation) {
-        for (Client client : customerService.getCustomers()) {
-            List<Operation> operations = storage.get(client.getId());
-            if (operations == null) {
-                List<Operation> customerOperations = new ArrayList<>();
-                customerOperations.add(operation);
-                storage.put(client.getId(), customerOperations);
-            } else {
-                operations.add(operation);
-            }
+    public void saveOperation(Operation operation, Client client) {
+        List<Operation> operations = storage.get(client.getId());
+        if (operations == null) {
+            List<Operation> customerOperations = new ArrayList<>();
+            customerOperations.add(operation);
+            storage.put(client.getId(), customerOperations);
+        } else {
+            operations.add(operation);
         }
     }
 
